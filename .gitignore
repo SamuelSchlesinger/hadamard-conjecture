@@ -1,0 +1,7 @@
+# Lean / Lake artifacts
+.lake/
+lake-packages/
+build/
+
+# OS artifacts
+.DS_Store
