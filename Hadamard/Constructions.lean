@@ -3,8 +3,8 @@ import Hadamard.Defs
 /-!
 # Hadamard Conjecture — First Constructions
 
-This file contains baseline constructions and theorem stubs for the
-Sylvester/Kronecker pipeline.
+This file contains baseline constructions and proved theorems for the
+Sylvester/Kronecker doubling pipeline.
 -/
 
 namespace Hadamard
@@ -42,6 +42,9 @@ theorem isHadamardMatrix_two : IsHadamardMatrix 2 sylvesterTwo := by
     exact sylvesterTwo_entry i j
   · ext i j
     fin_cases i <;> fin_cases j <;> norm_num [sylvesterTwo, Matrix.mul_apply]
+
+theorem hasHadamardMatrix_two : HasHadamardMatrix 2 :=
+  ⟨sylvesterTwo, isHadamardMatrix_two⟩
 
 lemma mul_eq_one_or_neg_one_of_eq_one_or_neg_one {a b : ℤ}
     (ha : a = 1 ∨ a = -1) (hb : b = 1 ∨ b = -1) :
